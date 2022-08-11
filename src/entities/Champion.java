@@ -36,10 +36,10 @@ public class Champion {
 	public void takeDamage(Champion other) {
 		Champion champion = other;
 		
-		if(life > 0 && armor < champion.attack) {
+		if(getLife() > 0 && getArmor() < champion.attack) {
 			life -= champion.attack - armor;
 		}
-		if(life > 0 && armor >= champion.attack) {
+		if(getLife() > 0 && getArmor() >= champion.attack) {
 			life += - 1;
 		}		
 	}
@@ -47,14 +47,14 @@ public class Champion {
 	public String status() {
 		String livingConditions = "";
 		
-		if(life <= 0) {
+		if(getLife() <= 0) {
 			livingConditions = "(morreu)";
-			life = 0;
+			setLife(0);
 		}		
 		
-		return name
+		return getName()
 				+ ": "
-				+ String.format("%d", life)
+				+ String.format("%d", getLife())
 				+ " de vida "
 				+ String.format("%s", livingConditions);	
 	}	
