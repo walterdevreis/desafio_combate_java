@@ -11,7 +11,7 @@ public class Program {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		Champion c1, c2;
+		Champion championOne, championTwos;
 		int N;
 		
 		System.out.println("Digite os dados do primeiro campeão:");
@@ -23,7 +23,7 @@ public class Program {
 		int attack = sc.nextInt();
 		System.out.print("Armadura: ");
 		int armor = sc.nextInt();		
-		c1 = new Champion(name, quantityOfLife, attack, armor);
+		championOne = new Champion(name, quantityOfLife, attack, armor);
 		System.out.println();
 		
 		System.out.println("Digite os dados do segundo campeão:");
@@ -36,7 +36,7 @@ public class Program {
 		attack = sc.nextInt();
 		System.out.print("Armadura: ");
 		armor = sc.nextInt();		
-		c2 = new Champion(name, quantityOfLife, attack, armor);
+		championTwos = new Champion(name, quantityOfLife, attack, armor);
 		System.out.println();
 		
 		System.out.print("Quantos turnos você deseja executar? ");
@@ -44,12 +44,12 @@ public class Program {
 		System.out.println();
 		
 		int i = 1;
-		while (i <= N && c1.getLife() > 0 && c2.getLife() > 0) {
+		while (i <= N && championOne.getLife() > 0 && championTwos.getLife() > 0) {
 			System.out.println("Resultado do turno " + i + ":");
-			c1.takeDamage(c2);
-			System.out.println(c1.status()); 
-			c2.takeDamage(c1);
-			System.out.println(c2.status());
+			championOne.takeDamage(championTwos);
+			System.out.println(championOne.status()); 
+			championTwos.takeDamage(championOne);
+			System.out.println(championTwos.status());
 			System.out.println();
 			i++;
 		}
