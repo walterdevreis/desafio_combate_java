@@ -7,10 +7,10 @@ public class Champion {
 	private int attack;
 	private int armor;
 	
-	public Champion(String name, int life, int damage, int armor) {
+	public Champion(String name, int life, int attack, int armor) {
 		this.name = name;
 		this.life = life;
-		attack = damage;
+		this.attack = attack;
 		this.armor = armor;
 	}
 	
